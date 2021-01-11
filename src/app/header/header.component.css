@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+    font-family:staat;
+    color: white;
+    overflow: hidden;
+}
+.header{
+    display: flex;
+    position: relative;
+    width: 100vw;
+    padding:1%;
+    margin-left:-1%;
+    margin-top:-1%;
+    margin-right: -4%;
+    justify-content: space-between;
+    background-color: black;
+    letter-spacing: 7px;
+}
+.left{
+    width:50%;
+    margin-top: 1%;
+    display: flex;
+    margin-left:5%;
+    justify-content: left;
+    align-items: center;
+    font-size:4vmin;
+}
+.left:hover a{
+    filter: brightness(40%);
+}
+@media screen and (max-width : 540px)
+{
+    .header{
+        display: flex;
+        position: relative;
+        height:10vh;
+        width: 100vw;
+        padding:1%;
+        margin-left:-4%;
+        margin-top:-4%;
+        margin-right: -4%;
+        justify-content: space-between;
+        background-color: black;
+        font-size:6vmin;
+        letter-spacing: 7px;
+    }
+}
+@font-face{
+    font-family: 'staat';
+    src:url("assets/Staatliches-Regular.ttf");
+}

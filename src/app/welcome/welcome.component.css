@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+    font-family:staat;
+    color: black;
+    overflow: hidden;
+}
+.welcome{
+    height: 80vh;
+    width: 100vw;
+    margin-left: -1%;
+    margin-bottom: -1%;
+    padding-right: 2%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin-top: 5%;
+    font-size: 2em;
+}
+.sign-up{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 45vw;
+    margin-right: 45vw;
+    margin-top: 5%;
+    font-size: 2em;
+    border: 5px solid black;
+    transition: background-color 0.5s;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    margin-left: 45vw;
+    margin-right: 45vw;
+    font-size: 2em;
+    border: 5px solid black;
+    transition: background-color 0.5s;
+}
+.login:hover a{
+    color:white;
+}
+.login:hover{
+    background-color: black;
+}
+.sign-up:hover a{
+    color:white;
+}
+.sign-up:hover{
+    background-color: black;
+}
+@media screen and (max-width : 1024px)
+{
+    .welcome{
+        height: 80vh;
+        width: 100vw;
+        margin-left: -1%;
+        margin-bottom: -1%;
+        padding-right: 2%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .description{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        margin-top: 20%;
+        font-size: 1.25em;
+    }
+    .sign-up{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 35vw;
+        margin-right: 35vw;
+        margin-top: 15%;
+        font-size: 1em;
+        border: 2px solid black;
+    }
+    .login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15%;
+        margin-left: 35vw;
+        margin-right: 35vw;
+        font-size: 1em;
+        border: 2px solid black;
+    }
+
+}
+@font-face{
+    font-family: 'staat';
+    src:url("assets/Staatliches-Regular.ttf");
+}

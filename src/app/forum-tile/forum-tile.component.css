@@ -1,0 +1,43 @@
+.block{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 15vw;
+    width: 85vw;
+
+}
+.row-post{
+    flex: 0 0 31.333333%;
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
+    padding-left: 1%;
+    border-left: 2px solid black;    
+    border-left-style: inset;
+    transition: transform 1.2s;
+}
+.row-post a {
+    color: black;
+}
+.row-post:hover{
+    border-left-color:white;
+    transform: scale(1.2);
+}
+.row-post:hover a{
+    color: blue;
+}
+.row-post > .title{
+    letter-spacing: 3px;
+    font-size: 1.25em;
+}
+.row-post >.description{
+    width: 50%;
+    font-family: kalam;
+}
+@font-face{
+    font-family: 'pm';
+    src:url("assets/PermanentMarker-Regular.ttf");
+}
+@font-face{
+    font-family: 'kalam';
+    src:url("assets/Kalam-Regular.ttf");
+}

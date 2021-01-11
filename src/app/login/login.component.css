@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+    font-family:staat;
+    color: black;
+    overflow: hidden;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+}
+.card button{
+    font-size: 1.5em;
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+    margin-bottom: 5%;
+}
+.card-header{
+    font-size: 2.5em;
+    margin-bottom: 3%;
+}
+.form-group-row label{
+    font-size: 2em;
+}
+.form-group-row input{
+    width: 15vw;
+    height: 3vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.form-group-row span{
+    font-family:Arial, Helvetica, sans-serif
+}
+a{
+    color: blue;
+}
+@media screen and (max-width : 1024px)
+{
+    .card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15%;
+    }
+    .card button{
+        font-size: 1.25em;
+        margin-top: 5%;
+        margin-left: 30%;
+        margin-right: 30%;
+        width: 40%;
+        margin-bottom: 5%;
+    }
+    .card-header{
+        font-size: 2em;
+        margin-bottom: 3%;
+    }
+    .form-group-row label{
+        font-size: 1.5em;
+    }
+    .form-group-row input{
+        width: 65vw;
+        height: 3vh;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .form-group-row span{
+        font-family:Arial, Helvetica, sans-serif
+    }
+
+}

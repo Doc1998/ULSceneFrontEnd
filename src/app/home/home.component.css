@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+    font-family:staat;
+    color: black;
+    overflow: hidden;
+    
+}
+.page{
+    width: 100vw;
+    padding:1%;
+    margin-left:-1%;
+    margin-top:-1%;
+    margin-right: -4%;
+}
+.title{
+    margin-left: 50%;
+}
+h1{
+    color:darkslateblue;
+    letter-spacing: 3px;
+}
+.allForums{
+    display: flex;
+    flex-direction: row;
+    font-size: 1.25em;
+}
+@font-face{
+    font-family: 'kalam';
+    src:url("assets/Kalam-Regular.ttf");
+}

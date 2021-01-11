@@ -1,0 +1,22 @@
+<div class="row-post" *ngFor="let post of posts">
+    <div class="title">
+        <a class="postname" href="{{post.url}}">{{post.postName}}</a>
+    </div>
+    <div>
+        <p class="post-text" [innerHtml] = "post.description"></p>
+    </div>
+    <div class="bottom">
+        <div class="comments">
+            <a class = "btnComments" role = "button">
+                Comments <fa-icon [icon]="icon"></fa-icon>({{post.commentCount}})
+            </a>
+        </div>
+        <div class="info">
+            <div class="user">
+                <span>Posted by</span>
+                <div class="username">:   {{post.userName}}</div>
+            </div>
+            <span class = "duration">{{post.duration}}</span>
+        </div>
+    </div>
+</div>

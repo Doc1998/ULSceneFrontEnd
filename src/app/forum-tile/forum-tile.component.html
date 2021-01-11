@@ -1,0 +1,13 @@
+<div class="block">
+    <div class="row-post" *ngFor="let forum of forums">
+        <div class="title">
+            <a routerLink = "/forum/{{forum.name}}">{{forum.name}}</a>
+        </div>
+        <div class="description">
+            <span>{{forum.description}}</span>
+        </div>
+        <div class="createdDate">
+            <span>{{forum.createdDate}}</span>
+        </div>
+    </div>
+</div>
