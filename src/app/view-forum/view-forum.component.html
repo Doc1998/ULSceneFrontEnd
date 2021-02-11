@@ -1,6 +1,17 @@
-<div class="all">
+<div class="all" *ngIf = "!isPrivate">
     <app-post-tile [posts] = "posts"></app-post-tile>
     <div class="sidebar">
-        <button mat-raised-button (click) = "openDialog()">Open Dialog</button>
+        <div class="regularview">
+            <div class="name">{{forum.name}}</div>
+            <div class="age">{{forum.duration}}</div>
+            <div class="creator">{{forum.userName}}</div>
+            <div class="users" *ngFor="let user of users">{{user.username}}</div>
+            <button (click) = "joinForum()" class = "joinForumBtn" *ngIf = "!isMember">Join Forum</button>
+            <button (click) = "joinForum()" class = "joinForumBtn" *ngIf = "isMember">Leave Forum</button>
+
+        </div>
+        <div class="modView">
+
+        </div>
     </div>
 </div>

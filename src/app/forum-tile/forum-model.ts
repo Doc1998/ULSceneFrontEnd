@@ -3,4 +3,9 @@ export class ForumModel{
     name:string;
     description:string;
     createdDate:string;
+    private:boolean;
+    numberOfPosts:number;
+    numberOfUsers:number;
+    duration:string;
+    userName:string;
 }

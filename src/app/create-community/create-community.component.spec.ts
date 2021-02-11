@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DialogCompComponent } from './dialog-comp.component';
+import { CreateCommunityComponent } from './create-community.component';
 
-describe('DialogCompComponent', () => {
-  let component: DialogCompComponent;
-  let fixture: ComponentFixture<DialogCompComponent>;
+describe('CreateCommunityComponent', () => {
+  let component: CreateCommunityComponent;
+  let fixture: ComponentFixture<CreateCommunityComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogCompComponent ]
+      declarations: [ CreateCommunityComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DialogCompComponent);
+    fixture = TestBed.createComponent(CreateCommunityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

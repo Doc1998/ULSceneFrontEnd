@@ -1,8 +1,11 @@
 <div class="header">
     <div class="left">
-        <a routerLink="" routerLinkActive="active">UL SCENE</a>
+        <a routerLink="" routerLinkActive="active">ConnectUL</a>
     </div>
     <div class="right">
-
+        <div *ngIf="isLoggedIn" class="options">
+            <a routerLink = "profile"><fa-icon [icon]="faUser" class = "user"></fa-icon></a>
+            <button (click)="logout()" class = "logout">Logout</button>
+        </div>
     </div>
 </div>

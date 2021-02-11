@@ -1,0 +1,33 @@
+
+<div class="all">
+    <div class="card-body">
+        <form [formGroup] = "createCommunity" (ngSubmit)='createForum()'>
+            <div class="form-group-row">
+                <label for = "forumName">Forum Name</label>
+                <div class="input">
+                    <input type="text" [formControlName]="'name'"class="form-control" required autofocus>
+                    <span *ngIf="!createCommunity.get('name').valid && createCommunity.get('name').touched" style="color: red;">
+                        Forum name must be between 5-75 characters
+                    </span>
+                </div>
+            </div>
+            <div class="form-group-row">
+                <label for = "forumName">Forum Description</label>
+                <div class="input">
+                    <input type="text" [formControlName]="'description'"class="form-control" required autofocus>
+                    <span *ngIf="!createCommunity.get('description').valid && createCommunity.get('description').touched" style="color: red;">
+                        Forum description must be between 30-300 characters
+                    </span>
+                </div>
+            </div>
+            <div class="checkbox">
+                Private Forum?  <input type ="checkbox"  (change)="makePrivate()">
+             </div>
+             <div class="btn">
+                <button type="submit" class="create-forum" *ngIf="createCommunity.get('description').valid && createCommunity.get('name').valid">
+                    Create Form
+                </button>
+             </div>
+        </form>
+    </div>
+</div>

@@ -1,22 +1,29 @@
 <div class="row-post" *ngFor="let post of posts">
-    <div class="title">
-        <a class="postname" href="{{post.url}}">{{post.postName}}</a>
+    <div class="left-side">
+        <app-vote [post]="post"></app-vote>
     </div>
-    <div>
-        <p class="post-text" [innerHtml] = "post.description"></p>
-    </div>
-    <div class="bottom">
-        <div class="comments">
-            <a class = "btnComments" role = "button">
-                Comments <fa-icon [icon]="icon"></fa-icon>({{post.commentCount}})
-            </a>
-        </div>
-        <div class="info">
+    <div class="contents">
+        <div class="title">
+            <a class="postname" routerLink="/posts/{{post.id}}">{{post.postName}}</a>
             <div class="user">
                 <span>Posted by</span>
-                <div class="username">:   {{post.userName}}</div>
+                <a class="username" routerLink="/users/{{post.userName}}">: {{post.userName}}</a>
             </div>
-            <span class = "duration">{{post.duration}}</span>
+        </div>
+        <div>
+            <p class="post-text" [innerHtml] = "post.description"></p>
+        </div>
+        <div class="bottom">
+            <div class="comments">
+                <a class = "btnComments" role = "button">
+                <fa-icon [icon]="icon"></fa-icon>Comments ({{post.commentCount}})
+                </a>
+            </div>
+            <div class="info">
+                <span class = "duration">{{post.duration}}</span>
+            </div>
         </div>
     </div>
 </div>
+
+

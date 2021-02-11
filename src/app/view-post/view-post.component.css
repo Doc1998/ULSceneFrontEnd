@@ -1,0 +1,60 @@
+.post{
+    width: 65vw;
+    height: 20%; 
+    outline: 1px solid black;
+    box-shadow: 2px 2px;
+    position: relative;
+    margin-bottom: 3%;
+    color: black;
+    margin-left:18vw;
+    margin-top: 2%;
+}
+.title{
+    font-size: 1.2em;
+    display: flex;
+    margin-left: 8.5%;
+}
+.bottom{
+    display: flex;
+    flex-direction: row;
+}
+.info{
+    font-size: 0.75em;
+    display: flex;
+    margin-left: 3%;
+    width: 100%;
+    justify-content: space-around;
+}
+.user{
+    display: flex;
+    font-size: 0.6em;
+    text-align: center;
+    margin: 1%;
+    margin-left:8.5% ;
+}
+.username{
+    color: blue;
+    text-decoration: none;
+}
+.duration{
+    margin-left: 2% ;
+}
+.post-text{
+    margin: 7.5%;
+    margin-left: 8.5%;
+    font-weight: 500;
+}
+.left-side{
+    background-color:#e8f3f3e8;
+    width:7.5%;
+    position: absolute;
+    bottom: 0;
+    top:0;
+}
+.comments{
+    margin-left: 33vw;
+}
+.makeComment {
+    display: flex;
+    margin-left: 40vw;
+}

@@ -1,0 +1,39 @@
+
+<div class="all">
+    <div class="card-body">
+        <form [formGroup] = "createPost" (ngSubmit)='makePost()'>
+            <div class="form-group-row">
+                <label for = "postName">Post Name</label>
+                <div class="input">
+                    <input type="text" [formControlName]="'postName'"class="form-control" required autofocus>
+                    <span *ngIf="!createPost.get('postName').valid && createPost.get('postName').touched" style="color: red;">
+                        Post title must be less than 100 characters
+                    </span>
+                </div>
+            </div>
+            <div class="form-group-row">
+                <label for = "content">Content</label>
+                <div class="input">
+                    <textarea rows = "5" cols = "60" [formControlName]="'content'"class="form-control-content" required autofocus>
+                        Enter details here...
+                     </textarea>
+                    <span *ngIf="!createPost.get('content').valid && createPost.get('content').touched" style="color: red;">
+                        Content must be between 1-500 characters
+                    </span>
+                </div>
+            </div>
+            <div class="selecter">
+                <select [formControlName]= "'forumName'">
+                    <option value="" selected disabled>Select Forum</option>
+                    <option *ngFor="let forum of forums">{{forum.name}}</option>
+                </select>
+            </div>
+            <div class="btn">
+                <button type="submit" class="create-forum" *ngIf="createPost.get('content').valid && createPost.get('forumName').valid">
+                    Create Post
+                </button>
+            </div>
+           
+        </form>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="all">
+    <div class="top">
+        <div class="posts">
+            <button class = "postsBtn" (click)="showPosts()">Posts</button>
+        </div>
+        <div class="comments">
+            <button class = "commentsBtn" (click)="showComments()">Comments</button>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="text">
+            <div class="username">
+                Username: <div [innerHTML]="name" class = "usernameVar"></div>
+            </div>
+            <div class="logos">
+                Logos:<div [innerHTML]="logos" class = "logosVar"></div>
+            </div>
+            <div class="joinDate">
+                Joined:<div [innerHTML]="joinDate" class = "dateVar"></div>
+            </div>
+        </div>
+    </div>
+    <div class="comments" *ngIf= "!viewPosts" >
+        <app-comment-tile [comments] = "comments" class = "comments"></app-comment-tile>
+    </div>
+    <div  *ngIf= "viewPosts" class="mainSection">
+        <app-post-tile [posts] = "posts" class = "posts"></app-post-tile>
+    </div>
+</div>

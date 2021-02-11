@@ -1,0 +1,34 @@
+<div class="all">
+    <div class="post">
+        <div class="left-side">
+            <app-vote [post]="p"></app-vote>
+        </div>
+        <div class="title">{{p.postName}}</div>
+        <div class="user">
+            <span>Posted by</span>
+            <a class="username" routerLink="/users/{{p.userName}}">: {{p.userName}}</a>
+        </div>
+        <div class="content">
+                <p class="post-text" [innerHtml] = "p.description"></p>
+        </div>
+        <div class="bottom">
+            <div class="info">
+                <span class = "duration">{{p.duration}}</span>
+            </div>
+        </div>
+    </div>
+    <form [formGroup] = "createComment" (ngSubmit) = 'makeComment();createComment.reset()'>
+        <div class="makeComment">
+            <textarea rows = "5" cols = "60" [formControlName]="'text'"class="form-control-content" required autofocus>
+            </textarea>
+            <div class="btn">
+                <button type="submit" class="create-forum">
+                    Create Comment
+                </button>
+            </div>
+        </div>  
+    </form>
+    <div class="comments">
+        <app-comment-tile [comments] = "comments" class = "comments"></app-comment-tile>
+    </div>
+</div>

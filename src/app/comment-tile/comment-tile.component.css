@@ -1,0 +1,50 @@
+.row-comment{
+    border: 1px solid black;
+    width: 35vw;
+    height: 20%; 
+    box-shadow: 1px 2px;
+    position: relative;
+    margin-bottom: 3%;
+    color: black;
+}
+.user{
+    display: flex;
+    font-size: 0.6em;
+    text-align: center;
+    margin: 1%;
+    margin-left:5% ;
+}
+.left-side{
+    background-color:#e8f3f3e8;
+    width:7.5%;
+    position: absolute;
+    bottom: 0;
+    top:0;
+}
+.contents{
+    margin-left: 8.5%;
+}
+.info{
+    font-size: 0.75em;
+    display: flex;
+    margin-left: 3%;
+    width: 100%;
+    justify-content: space-around;
+}
+.username,.postname{
+    color: blue;
+    margin-right: 5%;
+    text-decoration: none;
+}
+.duration{
+    margin-left: 2% ;
+    position: absolute;
+    bottom: 0;
+    right:1%;
+    font-size: 0.75em;
+}
+.comment-text{
+    margin: 5%;
+    margin-left: 1%;
+    font-weight: 500;
+}

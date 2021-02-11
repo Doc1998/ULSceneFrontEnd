@@ -2,6 +2,7 @@ import { Component, OnInit, Input} from '@angular/core';
 import { Router } from '@angular/router';
 import { PostModel } from './post-model';
 import { faComments } from '@fortawesome/free-regular-svg-icons';
+import { faThumbsUp,faThumbsDown } from '@fortawesome/free-regular-svg-icons';
 import {MatButton} from '@angular/material/button';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
@@ -16,6 +17,9 @@ export class PostTileComponent implements OnInit {
   @Input() posts: PostModel[];
   icon = faComments
   matButton = MatButton
+  thumbsup = faThumbsUp
+  thumbsDown = faThumbsDown
+  
   constructor(private router: Router,public dialog: MatDialog) {
    }
    

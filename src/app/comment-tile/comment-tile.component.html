@@ -1,0 +1,18 @@
+<div class="row-comment" *ngFor = "let comment of comments">
+    <div class="left-side">
+        <app-vote-comment [comment] = "comment"></app-vote-comment>
+    </div>
+    <div class="contents">
+        <div class="user">
+            <span>Posted by</span>
+            <div class="username">:   {{comment.userName}}</div>
+            replying to :<div class="postname"> {{comment.postName}}</div>
+        </div>
+        <div class="info">
+            <span class = "duration">{{comment.duration}}</span>
+        </div>
+        <div>
+            <p class="comment-text" [innerHtml] = "comment.text"></p>
+        </div>
+    </div>
+</div>

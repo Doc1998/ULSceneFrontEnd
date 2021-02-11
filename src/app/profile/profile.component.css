@@ -1,0 +1,39 @@
+.top{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    margin:0.5%;
+}
+.postsBtn{
+    font-size: 1.3em;
+    font-family: poppins;
+    border:none;
+    width: 150%;
+    margin-right:100%;
+}
+.commentsBtn{
+
+    font-size: 1.3em;
+    font-family: poppins;
+    border: none;
+    width: 150%;
+}
+.postsBtn:hover{
+    color:blue
+}
+.commentsBtn:hover{
+    color: blue;
+}
+.mainSection{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 2%;
+}
+.comments{
+    margin-left: 15%;
+}
+
+@font-face{
+    font-family: 'poppins';
+    src:url("assets/Poppins-Medium.ttf");
+}

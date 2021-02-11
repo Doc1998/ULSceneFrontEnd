@@ -1,12 +1,19 @@
 <div class="page">
-    <div class="title">
-        <h1>Forums</h1>
+    <div class="sort">
+        <select (change)="modo($event.target.value)">
+            <option>Sort-by</option>
+            <option value="popular">Most Popular</option>
+            <option value="new">New</option>
+            <option value="active">Most Active</option>
+            <span class="focus"></span>
+        </select>
     </div>
     <div class="sidebar">
-        sidebar
-    </div>
-    <div class="popular">
-        <h5>Explore the ULScene forums!</h5>
+        <h1>ConnectUL</h1>
+        <div class="create">
+            <button class = "community" routerLink ="/create-forum">Create Community</button>
+            <button class="post" routerLink = "/create-post">Create Post</button>
+        </div>
     </div>
     <div class="allForums">
         <app-forum-tile [forums] = "forums"></app-forum-tile>

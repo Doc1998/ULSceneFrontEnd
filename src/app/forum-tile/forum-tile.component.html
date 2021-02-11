@@ -1,7 +1,16 @@
+
 <div class="block">
+    
     <div class="row-post" *ngFor="let forum of forums">
+        <div class="lock" *ngIf = "isPrivate == forum.private" >
+            <fa-icon [icon]="faLock" class = "lockIcon"></fa-icon>
+        </div>
         <div class="title">
-            <a routerLink = "/forum/{{forum.name}}">{{forum.name}}</a>
+            <a routerLink = "/forum/{{forum.name}}/">{{forum.name}}</a>
+            <span class = "numOfPost">Number of posts :</span>
+            <span class ="numOfPostVar">{{forum.numberOfPosts}}</span>
+            <span class = "numOfUsers">Members :</span>
+            <span class ="numOfUsersVar">{{forum.numberOfUsers}}</span>
         </div>
         <div class="description">
             <span>{{forum.description}}</span>
@@ -11,3 +20,4 @@
         </div>
     </div>
 </div>
+
