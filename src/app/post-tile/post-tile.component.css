@@ -1,11 +1,12 @@
 .row-post{
     width: 35vw;
-    height: 20%; 
-    outline: 1px solid black;
-    box-shadow: 2px 2px;
+    height: 20%;
+    border: 1px solid black; 
     position: relative;
     margin-bottom: 3%;
     color: black;
+    border-radius: 5px;
+    font-family: poppins;
 }
 .title{
     font-size: 1.2em;
@@ -60,6 +61,7 @@
 }
 .contents{
     margin-left: 7.5%;
+    background-color: white;
 }
 .left-side{
     background-color:#e8f3f3e8;
@@ -89,4 +91,204 @@
     color: blue;
     font-size: 1.2em;
     margin-left: 20%;
+}
+@font-face{
+    font-family: 'poppins';
+    src:url("assets/Poppins-Medium.ttf");
+}
+@media (min-width: 700px)and (max-width : 1024px)
+{
+    .row-post{
+        width: 55vw;
+        height: 20%;
+        border: 1px solid black; 
+        position: relative;
+        margin-bottom: 3%;
+        color: black;
+        border-radius: 5px;
+        font-family: poppins;
+    }
+    .title{
+        font-size: 0.9em;
+        display: flex;
+        margin-left: 1%;
+    }
+    .bottom{
+        display: flex;
+        flex-direction: row;
+    }
+    .comments{
+        font-size: 0.55em;
+        width: 40%;
+        display: flex;
+        justify-content: center;;
+        text-align: center;
+    }
+    .btnComments{
+        margin-left: 1%;
+    }
+    .comments a{
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 7.5%;
+    }
+    .info{
+        font-size: 0.55em;
+        display: flex;
+        margin-left: 3%;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .user{
+        display: flex;
+        font-size: 0.6em;
+        text-align: center;
+        margin: 1%;
+        margin-left:5% ;
+    }
+    .username{
+        color: blue;
+        text-decoration: none;
+    }
+    .duration{
+        margin-left: 2% ;
+    }
+    .post-text{
+        margin: 5%;
+        margin-left: 1%;
+        font-weight: 500;
+        font-size: 0.9em;
+    }
+    .contents{
+        margin-left: 7.5%;
+        background-color: white;
+    }
+    .left-side{
+        background-color:#e8f3f3e8;
+        width:7.5%;
+        position: absolute;
+        bottom: 0;
+        top:0;
+    }
+    .icons{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top:20%;
+        bottom:30%;
+        left:20%;
+        height:10%;
+        font-family: staat;
+        font-size: 0.9em;
+    }
+    .up{
+        margin-bottom:35%;
+    }
+    .down{
+        margin-top: 40%;
+    }
+    .icons > .count{
+        color: blue;
+        font-size: 1.2em;
+        margin-left: 20%;
+    }
+}
+@media (max-width: 600px){
+    .row-post{
+        width: 55vw;
+        height: 15%;
+        border: 1px solid black; 
+        position: relative;
+        margin-bottom: 3%;
+        color: black;
+        border-radius: 5px;
+        font-family: poppins;
+    }
+    .title{
+        font-size: 0.7em;
+        display: flex;
+        margin-left: 1%;
+    }
+    .bottom{
+        display: flex;
+        flex-direction: row;
+    }
+    .comments{
+        font-size: 0.45em;
+        width: 40%;
+        display: flex;
+        justify-content: center;;
+        text-align: center;
+        
+    }
+    .btnComments{
+        margin-left: 1%;
+    }
+    .comments a{
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 7.5%;
+    }
+    .info{
+        font-size: 0.45em;
+        display: flex;
+        margin-left: 3%;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .user{
+        display: flex;
+        font-size: 0.5em;
+        text-align: center;
+        margin: 1%;
+        margin-left:5% ;
+    }
+    .username{
+        color: blue;
+        text-decoration: none;
+    }
+    .duration{
+        margin-left: 2% ;
+    }
+    .post-text{
+        margin: 5%;
+        margin-left: 1%;
+        font-weight: 500;
+        font-size: 0.8em;
+    }
+    .contents{
+        margin-left: 7.5%;
+        background-color: white;
+    }
+    .left-side{
+        background-color:#e8f3f3e8;
+        width:7.5%;
+        position: absolute;
+        bottom: 0;
+        top:0;
+    }
+    .icons{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top:20%;
+        bottom:30%;
+        left:20%;
+        height:10%;
+        font-family: staat;
+        font-size: 0.9em;
+    }
+    .up{
+        margin-bottom:35%;
+    }
+    .down{
+        margin-top: 40%;
+    }
+    .icons > .count{
+        color: blue;
+        font-size: 1.2em;
+        margin-left: 20%;
+    }
 }

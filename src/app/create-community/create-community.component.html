@@ -23,6 +23,18 @@
             <div class="checkbox">
                 Private Forum?  <input type ="checkbox"  (change)="makePrivate()">
              </div>
+             <div class="pickStyle">
+                <span>Background Style :</span>
+                <div class="choices">
+                    <button class = "doge" type ="button" (click) = "setDoge()"></button>
+                    <button class = "green" type ="button" (click) = "setGreen()"></button>
+                    <button class = "blue" type ="button" (click) = "setBlue()"></button>
+                    <button class = "stars" type ="button" (click) = "setStars()"></button>
+                    <button class = "normal" type ="button" (click) = "setNormal()"></button>
+                    <button class = "ocean" type ="button" (click) = "setOcean()"></button>
+
+                </div>
+            </div>
              <div class="btn">
                 <button type="submit" class="create-forum" *ngIf="createCommunity.get('description').valid && createCommunity.get('name').valid">
                     Create Form

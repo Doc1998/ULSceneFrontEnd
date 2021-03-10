@@ -21,6 +21,7 @@
             </div>
             <div class="info">
                 <span class = "duration">{{post.duration}}</span>
+                <fa-icon [icon]="trash" *ngIf = "currentUser === post.userName || isAdmin || isMod" (click)="deletePost(post.id)"></fa-icon>
             </div>
         </div>
     </div>

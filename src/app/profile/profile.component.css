@@ -32,6 +32,54 @@
 .comments{
     margin-left: 15%;
 }
+.sidebar{
+    width:15%;
+    position: absolute;
+    left:80%;
+    top:25%;
+    height:25%;
+    border: 3px solid black;
+    border-radius: 10%;
+   
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    width: 100%;
+    font-size: 1em;
+    font-family: poppins;
+}
+.username{
+    margin-top: 10%;
+    margin-bottom: 5%;
+    display: flex;
+    text-align: left;
+}
+.logos{
+    margin-top: 10%;
+    margin-bottom: 5%;
+    display: flex;
+ 
+}
+.joinDate{
+    margin-top: 10%;
+    display: flex;
+    
+}   
+.usernameVar{
+    margin-left: 10%;
+    font-family: staat;
+}
+.dateVar{
+    width: 100%;
+    margin-left: 10%;
+    font-family: staat;
+}
+.logosVar{
+    margin-left: 10%;
+    font-family: staat;
+}
 
 @font-face{
     font-family: 'poppins';

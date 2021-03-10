@@ -8,7 +8,17 @@
         </div>
     </div>
     <div class="sidebar">
-
+        <div class="text">
+            <div class="username">
+                Username: <div [innerHTML]="name" class = "usernameVar"></div>
+            </div>
+            <div class="logos">
+                Logos:<div [innerHTML]="logos" class = "logosVar"></div>
+            </div>
+            <div class="joinDate">
+                Joined:<div [innerHTML]="joinDate" class = "dateVar"></div>
+            </div>
+        </div>
     </div>
     <div class="comments" *ngIf= "!viewPosts" >
         <app-comment-tile [comments] = "comments" class = "comments"></app-comment-tile>

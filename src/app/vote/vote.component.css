@@ -21,3 +21,29 @@
 .upvote:focus{
     color: blue;
 }
+@media screen and (max-width : 1024px)
+{
+    .votebox {    
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        font-size: 0.85em;    
+    }
+    .upvote,.downvote {
+        cursor: pointer;
+        border-radius: 2px solid;        
+    }
+    .upvote:hover {
+        color: blue;
+    }
+    .downvote:hover {
+        color: red;
+    }
+    .downvote:focus{
+        color: red;
+    
+    }
+    .upvote:focus{
+        color: blue;
+    }
+}

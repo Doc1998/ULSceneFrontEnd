@@ -91,3 +91,105 @@
     font-family: 'poppins';
     src:url("assets/Poppins-Medium.ttf");
 }
+
+@media (max-width : 1024px)
+{
+    .block{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width:75%;
+    }
+    .lock{
+        display: flex;
+        align-items: center;
+    }
+    .row-post{
+        margin-bottom: 2.5%;
+        margin-top: 2.5%;
+        padding-left: 1%;   
+        transition: transform 1.2s;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    .row-post a {
+        color: black;
+    }
+    
+    .title:hover a{
+        color: white;
+    }
+    .row-post > .title{
+        letter-spacing: 1px;
+        font-size: 0.75em;
+    }
+    .row-post >.description{
+        width: 50%;
+        font-family: poppins;
+        display: flex;
+        position: relative;
+        color:rgba(130, 140, 243, 0.767);
+        font-size:0.65em;
+        word-wrap: break-all; 
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+    }
+    .lock{
+        color:black;
+        font-size: 0.65em;
+        float:right;
+        margin: 1%;
+      
+    }
+    .title{
+        display: flex;
+        word-wrap: break-all; 
+        
+    }
+    .numOfPostVar{
+        font-size: 0.55em;
+        font-family: poppins;
+        letter-spacing: 1px;
+        position: absolute;
+        right: 5%;
+        color:grey;
+        color:grey;
+        margin-top: 15%;
+        word-break:break-all;
+    }
+    .numOfPost{
+        font-size: 0.55em;
+        font-family: poppins;
+        letter-spacing: 1px;
+        position: absolute;
+        right: 8%;
+        color:grey;
+        margin-top: 15%;
+        word-break:break-all;
+    }
+    .numOfUsersVar{
+        font-size: 0.55em;
+        font-family: poppins;
+        letter-spacing: 1px;
+        position: absolute;
+        margin-top: 5%;
+        right: 5%;
+        color:grey;
+        color:grey;
+        margin-top: 10%;
+        word-break:break-all;
+    }
+    .numOfUsers{
+        font-size: 0.55em;
+        font-family: poppins;
+        letter-spacing: 1px;
+        position: absolute;
+        right: 8%;
+        margin-top: 5%;
+        color:grey;
+        color:grey;
+        margin-top: 10%;
+        word-break:break-all;
+    }
+}

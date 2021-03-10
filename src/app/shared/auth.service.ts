@@ -7,6 +7,8 @@ import { LoginRequestPayLoad } from '../login/login.request.payload';
 import { LoginResponse } from '../login/login-response.payload';
 import {map, tap } from 'rxjs/operators';
 import { UserResponse } from './user-response.payload';
+import { UserModel } from './user-model';
+import { UserNameModel } from '../profile/userNameModel';
 
 @Injectable({
   providedIn: 'root'
@@ -47,12 +49,12 @@ export class AuthService {
         this.localStorage.store('expiresAt', response.expiresAt);
       }));
   }
-  getCurrentUser(): Observable<UserResponse>{
-    return this.httpClient.get<UserResponse>('http://localhost:8080/api/auth/currentUser')
+  getCurrentUser(): Observable<UserModel>{
+    return this.httpClient.get<UserModel>('http://localhost:8080/api/auth/currentUser')
   }
  
-  getUserName(){
-    return this.localStorage.retrieve('username');
+  getUserName(): Observable<UserNameModel>{
+    return this.httpClient.get<UserNameModel>('http://localhost:8080/api/auth/currentUsername')
   }
   getRefreshToken(){
     return this.localStorage.retrieve('refreshToken');

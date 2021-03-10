@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ForumRequestPayload } from '../create-community/forum.request.payload';
 import { ForumModel } from '../forum-tile/forum-model';
 import { JoinForumRequestPayload } from '../forum-tile/joinForum.request.payload';
+import { ModeratorRequest } from '../view-forum/moderator-request-payload';
 import { UserModel } from './user-model';
 
 @Injectable({
@@ -35,6 +36,15 @@ export class ForumService {
   checkMembership(name:string):Observable<boolean>{
     return this.http.get<boolean>('http://localhost:8080/api/forum/checkMembership/' + name );
   }
+  checkModerator(name:string):Observable<boolean>{
+    return this.http.get<boolean>('http://localhost:8080/api/forum/checkModerator/' + name );
+  }
+  checkAdmin():Observable<boolean>{
+    return this.http.get<boolean>('http://localhost:8080/api/forum/checkAdmin');
+  }
+  checkBanned(name:string):Observable<boolean>{
+    return this.http.get<boolean>('http://localhost:8080/api/forum/checkBanned/' + name );
+  }
   getForumModerators(name:string):Observable<Array<UserModel>>{
     return this.http.get<Array<UserModel>>('http://localhost:8080/api/forum/' + name + '/mods');
   }
@@ -47,5 +57,18 @@ export class ForumService {
   leaveForum(JoinForumRequestPayload: JoinForumRequestPayload):Observable<any>{
     return this.http.post('http://localhost:8080/api/forum/leave',JoinForumRequestPayload);
   }
+  addModerator(moderatorRequest:ModeratorRequest):Observable<any>{
+    return this.http.post('http://localhost:8080/api/forum/'+ moderatorRequest.forumName + '/addMod',moderatorRequest);
+  }
+  removeModerator(moderatorRequest:ModeratorRequest):Observable<any>{
+    return this.http.post('http://localhost:8080/api/forum/'+ moderatorRequest.forumName + '/removeMod',moderatorRequest);
+  }
+  deleteForum(id:number){
+    return this.http.post('http://localhost:8080/api/forum/delete/', id );
+  }
+  banUser(moderatorRequest:ModeratorRequest):Observable<any>{
+    return this.http.post('http://localhost:8080/api/forum/'+ moderatorRequest.forumName + '/ban',moderatorRequest);
+  }
+  
   
 }

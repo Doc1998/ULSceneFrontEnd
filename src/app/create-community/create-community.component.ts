@@ -14,13 +14,15 @@ export class CreateCommunityComponent implements OnInit {
   createCommunity: FormGroup;
   forumRequest : ForumRequestPayload;
   isPrivate : boolean;
+  
   constructor(private router: Router,private toastr:ToastrService,private forumService: ForumService) { 
     this.forumRequest = {
       name : '',
       description : '',
+      background: 'normal',
       isPrivate : false
     };
-    
+    this.isPrivate = false;
   }
 
   ngOnInit(): void {
@@ -31,8 +33,9 @@ export class CreateCommunityComponent implements OnInit {
   }
 
   makePrivate(){
-    this.forumRequest.isPrivate = true;
-    console.log('method was called')
+    this.forumRequest.isPrivate = !this.forumRequest.isPrivate;
+    console.log(this.forumRequest.isPrivate)
+    
   }
   createForum(){
       this.forumRequest.name = this.createCommunity.get('name').value;
@@ -44,5 +47,23 @@ export class CreateCommunityComponent implements OnInit {
         this.toastr.error('Creation failed, forum name may already exist');
       });
   }
-
+  setDoge(){
+    this.forumRequest.background = 'Doge';
+    console.log(this.forumRequest.background)
+  }
+  setGreen(){
+    this.forumRequest.background = 'Green';
+  }
+  setBlue(){
+    this.forumRequest.background = 'Blue';
+  }
+  setStars(){
+    this.forumRequest.background = 'Stars';
+  }
+  setNormal(){
+    this.forumRequest.background = 'Normal';
+  }
+  setOcean(){
+    this.forumRequest.background = 'Ocean';
+  }
 }

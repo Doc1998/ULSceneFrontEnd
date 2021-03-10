@@ -13,11 +13,9 @@
 .sidebar{
     width: 15vw;
     height: 30vh;
-    background-color: lightblue;
     position: absolute;
     top: 35%;
     right:1%;
-    border: 3px solid lightblue;
     border-radius: 5px;
 }
 .create{
@@ -94,7 +92,104 @@ select:focus + .focus {
     border-color: blue;
   }
 
-
+  @media (min-width: 700px) and (max-width : 1023px)
+  {
+    *{
+        margin: 0;
+        padding:0;
+        list-style: none;
+        text-decoration: none;
+        font-family:staat;
+        color: black;
+        overflow: hidden;
+    }
+    .page{
+        background-color: rgb(135, 235, 173);
+    }
+    .sidebar{
+        width: 20vw;
+        height: 30vh;
+        position: absolute;
+        top: 35%;
+        right:1%;
+        border-radius: 5px;
+    }
+    h1{
+        
+    }
+    .create{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    .community{
+        padding: 3%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        border: 1px solid black;
+        background-color: white;
+        text-align: center;
+    }
+    .post{
+        padding: 3%;
+        width: 50%;
+        border: 1px solid black;
+        color: white;
+        background-color: black;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+    .post:hover{
+        background-color: gold;
+        color: black;
+    }
+    .community:hover{
+        background-color: gold;
+        color: black;
+    }
+    .page{
+        max-width:100%;
+        padding:1%;
+    }
+    
+    .subtitle h3{
+        color:darkslateblue;
+        letter-spacing: 3px;
+    }
+    .title h1{
+        color:darkslateblue;
+        letter-spacing: 3px;
+    }
+    
+    .sidebar h1{
+        color:darkslateblue;
+        letter-spacing: 3px;
+        text-align: center;
+    }
+    .allForums{
+        display: flex;
+        flex-direction: row;
+        font-size: 1.25em;
+        align-items: flex-start;
+        width: 75vw;
+        margin-left: 7.5%;
+        margin-right:17.5%;
+        word-wrap: break-word;
+    
+    }
+    select:focus + .focus {
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        bottom: -1px;
+        border: 2px solid var(--select-focus);
+        border-radius: inherit;
+        border-color: blue;
+      }
+  }
 @font-face{
     font-family: 'kalam';
     src:url("assets/Kalam-Regular.ttf");

@@ -8,7 +8,73 @@
     height: 100%;
     background-color: rgb(196, 233, 238);
 }
-
+.pickStyle{
+    margin-left: 35% ;
+    padding: 2%;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+}
+.green{
+    background-color: green;
+    color:white;
+    font-size: 2em;
+    margin-right:5%;
+    height:100px;
+    width:100px;
+}
+.normal{
+    font-size: 2em;
+    margin-right:5%;
+    height:100px;
+    width:100px;
+}
+.doge{
+    background-image: url("https://media.giphy.com/media/aFTt8wvDtqKCQ/giphy.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+    font-size: 2em;
+    height:100px;
+    width:100px;
+    margin-right:5%;
+}
+.blue{
+    background-color: blue;
+    color:white;
+    height:100px;
+    width:100px;
+    margin-right:5%;
+}
+.ocean{
+    background-image: url("https://media.giphy.com/media/5SxdtXRaHYoG0QFa7P/giphy.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+    font-size: 2em;
+    margin-right:5%;
+    height:100px;
+    width:100px;
+}
+.stars{
+    background-image: url("https://media.giphy.com/media/13NOyaMNX5UZYk/giphy.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+    font-size: 2em;
+    margin-right:5%;
+    height:100px;
+    width:100px;
+}
+.stars:focus,.blue:focus,.doge:focus,.green:focus{
+    border: 5px solid white;
+}
+.normal:focus{
+    border:5px solid black;
+}
 .form-group-row{
     display: flex;
     justify-content: flex-start;
@@ -17,6 +83,7 @@
     font-size: 1.7em;
     padding-top: 5%;
 }
+
 .form-group-row label{
     margin-right: 2%;
 }

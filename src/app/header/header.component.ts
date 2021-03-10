@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../shared/auth.service';
 import { faUser} from '@fortawesome/free-regular-svg-icons';
+import { UserNameModel } from '../profile/userNameModel';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import { faUser} from '@fortawesome/free-regular-svg-icons';
 export class HeaderComponent implements OnInit {
 
   isLoggedIn: boolean;
-  username: string;
+  username: UserNameModel;
   faUser = faUser;
   constructor(private authService: AuthService, private router: Router) {
 
@@ -19,9 +20,11 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.loggedIn.subscribe((data: boolean) => this.isLoggedIn = data);
-    this.authService.username.subscribe((data:string) => this.username = data);
+ 
     this.isLoggedIn = this.authService.isLoggedIn();
-    this.username = this.authService.getUserName();
+    this.authService.getUserName().subscribe(data => {
+      this.username = data
+    })
   }
   logout(){
     this.authService.logout();

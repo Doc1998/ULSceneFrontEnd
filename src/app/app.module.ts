@@ -28,6 +28,7 @@ import { CommentTileComponent } from './comment-tile/comment-tile.component';
 import { VoteCommentComponent } from './vote-comment/vote-comment.component';
 import { ViewOtherProfileComponent } from './view-other-profile/view-other-profile.component';
 import { ViewPostComponent } from './view-post/view-post.component';
+import { CreateForumPostComponent } from './create-forum-post/create-forum-post.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,8 @@ import { ViewPostComponent } from './view-post/view-post.component';
     CommentTileComponent,
     VoteCommentComponent,
     ViewOtherProfileComponent,
-    ViewPostComponent
+    ViewPostComponent,
+    CreateForumPostComponent
   ],
   imports: [
     BrowserModule,

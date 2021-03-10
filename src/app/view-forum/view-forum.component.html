@@ -1,17 +1,114 @@
-<div class="all" *ngIf = "!isPrivate">
-    <app-post-tile [posts] = "posts"></app-post-tile>
+<div class="all" *ngIf = "!isPrivate && !isBanned  || isAdmin" [ngStyle]="forum.background == 'Doge' && {'background-image':'url(https://media.giphy.com/media/aFTt8wvDtqKCQ/giphy.gif)'} || forum.background == 'Green' && {'background-color' : 'green'} || forum.background == 'Blue' && {'background-color' : ''} ||forum.background == 'Stars' && {'background-image':'url(https://media.giphy.com/media/13NOyaMNX5UZYk/giphy.gif)'} ||forum.background == 'Ocean' && {'background-image':'url(https://media.giphy.com/media/5SxdtXRaHYoG0QFa7P/giphy.gif)'}">
+    <div class="banner">
+        <div class="BannerName">{{forum.name}}</div>
+        <button (click) = "orderPostsByBestOfWeek()" class = "joinForumBtn" >New</button>
+        <button (click) = "orderPostsByVotes()" class = "joinForumBtn" >Best</button>
+        <button (click) = "joinForum()" class = "joinForumBtn" *ngIf = "!isMember">Join Forum</button>
+        <button (click) = "leaveForum()" class = "joinForumBtn" *ngIf = "isMember">Leave Forum</button>
+    </div>
+    <app-post-tile [posts] = "posts" class = "posts"></app-post-tile>
     <div class="sidebar">
-        <div class="regularview">
-            <div class="name">{{forum.name}}</div>
-            <div class="age">{{forum.duration}}</div>
-            <div class="creator">{{forum.userName}}</div>
-            <div class="users" *ngFor="let user of users">{{user.username}}</div>
-            <button (click) = "joinForum()" class = "joinForumBtn" *ngIf = "!isMember">Join Forum</button>
-            <button (click) = "joinForum()" class = "joinForumBtn" *ngIf = "isMember">Leave Forum</button>
-
+        <div class="regularview" *ngIf = "!isMod && !isAdmin">
+            <div class="name">Name : {{forum.name}}</div>
+            <div class="age">Created: {{forum.duration}}</div>
+            <div class="creator">Created by: {{forum.userName}}</div>
+            <span style="color: red;" class="mods">Moderators : </span><div class="modList" *ngFor="let user of mods">{{user.username}}</div>
+            <div class="aboutCom"><span style="text-decoration: underline;color: blue">About the Community : </span><span style="color: black; text-decoration: none;">{{forum.description}}</span></div>
+            <button class="post" routerLink = "/forum/{{forum.name}}/createPost">Create Post</button>
         </div>
-        <div class="modView">
-
+        <div class="modView" *ngIf = "isMod && !isAdmin">
+            <div class="name">Name: {{forum.name}}</div>
+            <div class="age">Created: {{forum.duration}}</div>
+            <div class="creator">Created by : {{forum.userName}}</div>
+            <span style="color: red;">Moderators : </span><div class="mods" *ngFor="let user of mods">{{user.username}}</div>
+            <div class="addMember">
+                <form [formGroup] = "addNewMemberToForum" (ngSubmit)='addMember()' *ngIf = "forum.private">
+                    <input type="text" [formControlName]="'username'"class= "newMemberName">
+                    <div class="btn">
+                        <button type="submit" class="btn">
+                            Add New Member
+                        </button>
+                     </div>
+                </form>
+            </div>
+            <div class="removeMember">
+                <form [formGroup] = "removeMemberFromForum" (ngSubmit)='removeMember()'>
+                    <input type="text" [formControlName]="'userName'"class= "newMemberName">
+                    <div class="btn">
+                        <button type="submit" class="btn">
+                            Remove Member
+                        </button>
+                     </div>
+                </form>
+            </div>
+            <div class="aboutCom">About the Community : <span style="color: grey;">{{forum.description}}</span></div>
+            <button class="post" routerLink = "forum/forum.name/createPost">Create Post</button>
+        </div>
+        
+        <div class="adminView" *ngIf = "isAdmin">
+            <div class="row">Forum name : <span style="color: blue;">{{forum.name}}</span></div>
+            <div class="row">Created : <span style="color: blue;">{{forum.duration}}</span></div>
+            <div class="row">Created by : <span style="color: blue;" routerLink="/users/{{forum.userName}}">{{forum.userName}}</span></div>
+            <div class="row">About : <span style="color: grey;">{{forum.description}}</span></div>
+            <span style="color: red;">Moderators : </span><span style="color: red;"></span><div class="mods" *ngFor="let user of mods">{{user.username}}</div>
+            <div class="addMember">
+                <form [formGroup] = "addNewMemberToForum" (ngSubmit)='addMember()'>
+                    <input type="text" [formControlName]="'username'"class= "newMemberName">
+                    <div class="btn">
+                        <button type="submit" class="btn">
+                            Add New Member
+                        </button>
+                     </div>
+                </form>
+            </div>
+            <div class="removeMember">
+                <form [formGroup] = "removeMemberFromForum" (ngSubmit)='removeMember()'>
+                    <input type="text" [formControlName]="'userName'"class= "input">
+                    <div class="btn">
+                        <button type="submit" class="btn">
+                            Remove Member
+                        </button>
+                     </div>
+                </form>
+            </div>
+            <div class="addMod">
+                <form [formGroup] = "addNewModerator" (ngSubmit)='addModerator()'>
+                    <input type="text" [formControlName]="'newModName'"class= "input">
+                    <div class="btn">
+                        <button type="submit" class="btn">
+                            Add New Moderator
+                        </button>
+                     </div>
+                </form>
+            </div>
+            <div class="removeMod">
+                <form [formGroup] = "removeModerator" (ngSubmit)='removeMod()'>
+                    <input type="text" [formControlName]="'userName'"class= "input">
+                    <div class="btn">
+                        <button type="submit" class="btn">
+                            Remove Moderator
+                        </button>
+                     </div>
+                </form>
+            </div>
+            <div class="addMod">
+                <form [formGroup] = "banUser" (ngSubmit)='banUserFromForum()'>
+                    <input type="text" [formControlName]="'bannedName'"class= "input">
+                    <div class="btn">
+                        <button type="submit" class="btn">
+                            Ban User
+                        </button>
+                     </div>
+                </form>
+            </div>
+            <div class="deleteForum">
+                <button (click) = "deleteForum()">Delete Forum</button>
+            </div>
+            <div class="aboutCom">About the Community : <span style="color: grey;">{{forum.description}}</span></div>
+            <button class="post" routerLink = "/create-post">Create Post</button>
         </div>
     </div>
+</div>
+<div class="bannedView" *ngIf = "isBanned">
+    <H2>You have been banned from visiting {{forum.name}}</H2>
 </div>

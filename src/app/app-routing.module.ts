@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CreateCommunityComponent } from './create-community/create-community.component';
+import { CreateForumPostComponent } from './create-forum-post/create-forum-post.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:'create-post',component:CreatePostComponent,canActivate:[AuthGuard]},
   {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
   {path:'users/:user',component:ViewOtherProfileComponent,canActivate:[AuthGuard]},
-  {path:'posts/:id',component:ViewPostComponent,canActivate:[AuthGuard]}
+  {path:'posts/:id',component:ViewPostComponent,canActivate:[AuthGuard]},
+  {path:'forum/:name/createPost',component:CreateForumPostComponent,canActivate:[AuthGuard]},
 
 ];
 

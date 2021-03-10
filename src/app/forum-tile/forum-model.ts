@@ -8,4 +8,5 @@ export class ForumModel{
     numberOfUsers:number;
     duration:string;
     userName:string;
+    backGround:string;
 }

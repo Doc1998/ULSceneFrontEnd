@@ -14,6 +14,12 @@ export class PostService {
   getPostsByForumName(name:string): Observable<Array<PostModel>>{
     return this.http.get<Array<PostModel>>('http://localhost:8080/api/posts/by-Forum-name/' + name);
   }
+  getPostsByMostPopular(name:string): Observable<Array<PostModel>>{
+    return this.http.get<Array<PostModel>>('http://localhost:8080/api/posts/by-Forum-name/' + name + '/mostPopular');
+  }
+  getPostsByBestOfWeek(name:string): Observable<Array<PostModel>>{
+    return this.http.get<Array<PostModel>>('http://localhost:8080/api/posts/by-Forum-name/' + name + '/bestOfWeek');
+  }
   getPostsByUser(username:string): Observable<Array<PostModel>>{
     return this.http.get<Array<PostModel>>('http://localhost:8080/api/posts/by-user/' + username);
   }
@@ -25,6 +31,9 @@ export class PostService {
   }
   createPost(postRequest:PostRequestPayload) {
     return this.http.post('http://localhost:8080/api/posts/',postRequest);
+  }
+  deletePost(id:number){
+    return this.http.post('http://localhost:8080/api/posts/delete',id);
   }
 
 }
