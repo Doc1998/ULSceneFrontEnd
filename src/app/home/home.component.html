@@ -1,4 +1,5 @@
-<div class="page">
+<div class="page" 
+[ngStyle]="{'background-image':'url(https://media.giphy.com/media/d5PPYjcb3caPTHM3hv/giphy.gif)'}">
     <div class="sort">
         <select (change)="modo($event.target.value)">
             <option>Sort-by</option>
@@ -9,7 +10,7 @@
         </select>
     </div>
     <div class="sidebar">
-        <h1>ConnectUL</h1>
+        <div class="sTitle"><h1 style="color: white;">Connect<span style="color: greenyellow;">UL</span></h1></div>
         <div class="create">
             <button class = "community" routerLink ="/create-forum">Create Community</button>
             <button class="post" routerLink = "/create-post">Create Post</button>

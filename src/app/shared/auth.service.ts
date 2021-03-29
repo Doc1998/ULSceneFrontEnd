@@ -65,6 +65,25 @@ export class AuthService {
   isLoggedIn(): boolean {
     return this.getJwtToken() != null;
   }
+  banUser(username:string) {
+    return this.httpClient.post('http://localhost:8080/api/auth/banUser/',username);
+  }
+  unBanUser(username:string){
+    return this.httpClient.post('http://localhost:8080/api/auth/unBanUser/',username);
+  }
+  checkBanned(name:string):Observable<boolean>{
+    return this.httpClient.get<boolean>('http://localhost:8080/api/auth/checkBanned/' + name );
+  }
+  checkUserBanned():Observable<boolean>{
+    return this.httpClient.get<boolean>('http://localhost:8080/api/auth/checkBanned');
+  }
+  addAdmin(username:string){
+    return this.httpClient.post('http://localhost:8080/api/auth/addAdmin/',username);
+  }
+  removeAdmin(username:string){
+    return this.httpClient.post('http://localhost:8080/api/auth/removeAdmin/',username);
+  }
+  
   logout() {
     this.httpClient.post('http://localhost:8080/api/auth/logout', this.refreshTokenPayload,
       { responseType: 'text' })
@@ -73,6 +92,7 @@ export class AuthService {
       }, error => {
         throwError(error);
       })
+    this.loggedIn.emit(false);
     this.localStorage.clear('jwt');
     this.localStorage.clear('username');
     this.localStorage.clear('refreshToken');

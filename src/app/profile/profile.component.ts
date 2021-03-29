@@ -5,6 +5,7 @@ import { CommentModel } from '../comment-tile/comment-model';
 import { PostModel } from '../post-tile/post-model';
 import { AuthService } from '../shared/auth.service';
 import { CommentService } from '../shared/comment.service';
+import { ForumService } from '../shared/forum.service';
 import { PostService } from '../shared/post.service';
 import { UserModel } from '../shared/user-model';
 import { UserResponse } from '../shared/user-response.payload';
@@ -24,8 +25,13 @@ export class ProfileComponent implements OnInit {
   joinDate: String;
   logos:number;
   name:string;
-  user:UserModel
-    constructor(private router: Router,private toastr:ToastrService,private postService: PostService,private commentService:CommentService,private authService:AuthService,private voteService:VoteService) { 
+  isAdmin:boolean;
+  user:UserModel;
+  noPosts:boolean;
+  noComments:boolean;
+    constructor(private router: Router,private forumService:ForumService,private toastr:ToastrService,private postService: PostService,private commentService:CommentService,private authService:AuthService,private voteService:VoteService) { 
+      this.noComments = false;
+      this.noPosts = false;
 
   }
 
@@ -40,6 +46,9 @@ export class ProfileComponent implements OnInit {
         this.joinDate = data;
       })
     })
+    this.forumService.checkAdmin().subscribe(result =>{
+      this.isAdmin = result;
+    })
     this.postService.getPostsByCurrentUser().subscribe(posts => {
     this.posts = posts;
     this.viewPosts = true;
@@ -49,13 +58,18 @@ export class ProfileComponent implements OnInit {
     this.postService.getPostsByCurrentUser().subscribe(posts => {
       this.posts = posts;
       this.viewPosts = true;
+      if(posts.length < 1){
+        this.noPosts = true;
+      }
     })
   }
   showComments(){
     this.commentService.getCommentsByCurrentUser().subscribe(comments =>{
         this.comments = comments;
         this.viewPosts = false;
-        console.log('ok');
+        if(comments.length < 1){
+          this.noComments = true;
+        }
     })
   }
 }

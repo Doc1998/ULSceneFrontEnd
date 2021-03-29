@@ -96,7 +96,7 @@
     font-family: 'poppins';
     src:url("assets/Poppins-Medium.ttf");
 }
-@media (min-width: 700px)and (max-width : 1024px)
+@media (min-width: 650px)and (max-width : 1024px)
 {
     .row-post{
         width: 55vw;

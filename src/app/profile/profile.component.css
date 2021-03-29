@@ -42,6 +42,9 @@
     border-radius: 10%;
    
 }
+.consoleLink{
+    text-align: center;
+}
 .text{
     display: flex;
     flex-direction: column;
@@ -80,8 +83,182 @@
     margin-left: 10%;
     font-family: staat;
 }
-
+span{
+    font-family: poppins;
+}
 @font-face{
     font-family: 'poppins';
     src:url("assets/Poppins-Medium.ttf");
+}
+@media (min-width: 650px)and (max-width : 1024px)
+{
+    .top{
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+        margin:0.5%;
+    }
+    .postsBtn{
+        font-size: 1em;
+        font-family: poppins;
+        border:none;
+        width: 150%;
+        margin-right:100%;
+    }
+    .commentsBtn{
+    
+        font-size: 1em;
+        font-family: poppins;
+        border: none;
+        width: 150%;
+    }
+    .postsBtn:hover{
+        color:blue
+    }
+    .commentsBtn:hover{
+        color: blue;
+    }
+    .mainSection{
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 2%;
+    }
+    .comments{
+        margin-left: 15%;
+    }
+    .sidebar{
+        position: absolute;
+        left:80%;
+        top:25%;
+        border: 3px solid black;
+        border-radius: 10%;
+    }
+    .text{
+        display: flex;
+        flex-direction: column;
+        height:100%;
+        width: 100%;
+        font-size: 0.75em;
+        font-family: poppins;
+    }
+    .username{
+        margin-top: 10%;
+        margin-bottom: 5%;
+        display: flex;
+        text-align: left;
+    }
+    .logos{
+        margin-top: 10%;
+        margin-bottom: 5%;
+        display: flex;
+     
+    }
+    .joinDate{
+        margin-top: 10%;
+        display: flex;
+        
+    }   
+    .usernameVar{
+        margin-left: 10%;
+        font-family: staat;
+    }
+    .dateVar{
+        width: 100%;
+        margin-left: 10%;
+        font-family: staat;
+    }
+    .logosVar{
+        margin-left: 10%;
+        font-family: staat;
+    }
+    span{
+        font-family: poppins;
+    }
+}
+@media (max-width: 600px){
+    .top{
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+        margin:0.5%;
+    }
+    .postsBtn{
+        font-size: .75em;
+        font-family: poppins;
+        border:none;
+        width: 150%;
+        margin-right:100%;
+    }
+    .commentsBtn{
+    
+        font-size: .75em;
+        font-family: poppins;
+        border: none;
+        width: 150%;
+    }
+    .postsBtn:hover{
+        color:blue
+    }
+    .commentsBtn:hover{
+        color: blue;
+    }
+    .mainSection{
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 2%;
+    }
+    .comments{
+        margin-left: 15%;
+    }
+    .sidebar{
+        position: absolute;
+        left:80%;
+        top:25%;
+        border: 2px solid black;
+        border-radius: 10%;
+       
+    }
+    .text{
+        display: flex;
+        flex-direction: column;
+        height:100%;
+        width: 100%;
+        font-size: 0.5em;
+        font-family: poppins;
+    }
+    .username{
+        margin-top: 10%;
+        margin-bottom: 5%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    .logos{
+        margin-top: 10%;
+        margin-bottom: 5%;
+        display: flex;
+        flex-direction: column;
+    }
+    .joinDate{
+        margin-top: 10%;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.85em;
+    }   
+    .usernameVar{
+        margin-left: 10%;
+        font-family: staat;
+    }
+    .dateVar{
+        width: 100%;
+        margin-left: 10%;
+        font-family: staat;
+    }
+    .logosVar{
+        margin-left: 10%;
+        font-family: staat;
+    }
+    span{
+        font-family: poppins;
+    }
 }

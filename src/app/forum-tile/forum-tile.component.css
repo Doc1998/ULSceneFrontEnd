@@ -18,11 +18,11 @@
     border-radius: 5px;
 }
 .row-post a {
-    color: black;
+    color: white;
 }
 
 .title:hover a{
-    color: white;
+    color: greenyellow;
 }
 .row-post > .title{
     letter-spacing: 3px;
@@ -33,7 +33,7 @@
     font-family: poppins;
     display: flex;
     position: relative;
-    color:rgba(130, 140, 243, 0.767)
+    color:greenyellow
 }
 .lock{
     color:black;
@@ -51,7 +51,7 @@
     letter-spacing: 1px;
     position: absolute;
     right: 5%;
-    color:grey;
+    color:greenyellow;
 }
 .numOfPost{
     font-size: 0.55em;
@@ -59,7 +59,7 @@
     letter-spacing: 1px;
     position: absolute;
     right: 10%;
-    color:grey;
+    color:greenyellow;
 }
 .numOfUsersVar{
     font-size: 0.55em;
@@ -68,7 +68,7 @@
     position: absolute;
     margin-top: 5%;
     right: 5%;
-    color:grey;
+    color:greenyellow;
 }
 .numOfUsers{
     font-size: 0.55em;
@@ -77,7 +77,7 @@
     position: absolute;
     right: 10%;
     margin-top: 5%;
-    color:grey;
+    color:greenyellow;
 }
 @font-face{
     font-family: 'pm';

@@ -8,10 +8,12 @@
     overflow: hidden;
 }
 .page{
-    background-color: rgb(135, 235, 173);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .sidebar{
-    width: 15vw;
+    width: 25vw;
     height: 30vh;
     position: absolute;
     top: 35%;

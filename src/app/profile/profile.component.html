@@ -18,12 +18,15 @@
             <div class="joinDate">
                 Joined:<div [innerHTML]="joinDate" class = "dateVar"></div>
             </div>
+            <a class="consoleLink" routerLink="/admin" *ngIf = "isAdmin" style="color: blue;">Go to Admin Console</a>
         </div>
     </div>
     <div class="comments" *ngIf= "!viewPosts" >
         <app-comment-tile [comments] = "comments" class = "comments"></app-comment-tile>
+        <span *ngIf = "noComments">You have made no comments!</span>
     </div>
     <div  *ngIf= "viewPosts" class="mainSection">
-        <app-post-tile [posts] = "posts" class = "posts"></app-post-tile>
+        <app-post-tile [posts] = "posts" class = "posts">You have made no Posts!</app-post-tile>
+        <span *ngIf = "noPosts">You have made no posts!</span>
     </div>
 </div>

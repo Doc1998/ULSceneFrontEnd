@@ -22,8 +22,10 @@
     </div>
     <div class="comments" *ngIf= "!viewPosts" >
         <app-comment-tile [comments] = "comments" class = "comments"></app-comment-tile>
+        <span *ngIf = "noComments">User has made no comments!</span>
     </div>
     <div  *ngIf= "viewPosts" class="mainSection">
         <app-post-tile [posts] = "posts" class = "posts"></app-post-tile>
+        <span *ngIf = "noPosts">User has made no posts!</span>
     </div>
 </div>

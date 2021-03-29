@@ -105,7 +105,7 @@
                 <button (click) = "deleteForum()">Delete Forum</button>
             </div>
             <div class="aboutCom">About the Community : <span style="color: grey;">{{forum.description}}</span></div>
-            <button class="post" routerLink = "/create-post">Create Post</button>
+            <button class="post" routerLink = "/forum/{{forum.name}}/createPost">Create Post</button>
         </div>
     </div>
 </div>

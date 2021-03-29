@@ -29,6 +29,7 @@ import { VoteCommentComponent } from './vote-comment/vote-comment.component';
 import { ViewOtherProfileComponent } from './view-other-profile/view-other-profile.component';
 import { ViewPostComponent } from './view-post/view-post.component';
 import { CreateForumPostComponent } from './create-forum-post/create-forum-post.component';
+import { AdminConsoleComponent } from './admin-console/admin-console.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,8 @@ import { CreateForumPostComponent } from './create-forum-post/create-forum-post.
     VoteCommentComponent,
     ViewOtherProfileComponent,
     ViewPostComponent,
-    CreateForumPostComponent
+    CreateForumPostComponent,
+    AdminConsoleComponent
   ],
   imports: [
     BrowserModule,

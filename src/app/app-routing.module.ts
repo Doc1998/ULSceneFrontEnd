@@ -13,9 +13,10 @@ import { ViewForumComponent } from './view-forum/view-forum.component';
 import { ViewOtherProfileComponent } from './view-other-profile/view-other-profile.component';
 import { ViewPostComponent } from './view-post/view-post.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AdminConsoleComponent } from './admin-console/admin-console.component';
 
 const routes: Routes = [
-  {path:'',component:WelcomeComponent,canActivate:[LoggedGuard]},
+  {path:'',component:WelcomeComponent},
   {path:'sign-up',component:SignupComponent},
   {path:'login',component:LoginComponent},
   {path:'home',component:HomeComponent,canActivate:[AuthGuard]},
@@ -26,6 +27,8 @@ const routes: Routes = [
   {path:'users/:user',component:ViewOtherProfileComponent,canActivate:[AuthGuard]},
   {path:'posts/:id',component:ViewPostComponent,canActivate:[AuthGuard]},
   {path:'forum/:name/createPost',component:CreateForumPostComponent,canActivate:[AuthGuard]},
+  {path:'admin',component:AdminConsoleComponent,canActivate:[AuthGuard]},
+  { path: '**', redirectTo: ''}
 
 ];
 

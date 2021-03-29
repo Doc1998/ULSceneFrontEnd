@@ -9,10 +9,11 @@ export class LoggedGuard implements CanActivate{
 
     }
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
-        if (this.authService.getUserName() !== null) {
+        const isAuthenticated = this.authService.isLoggedIn
+        if (isAuthenticated) {
             // logged in so return true
-            this.router.navigate(['/home'], { queryParams: { returnUrl: state.url }});
-            return false;
+            this.router.navigate(['/'], { queryParams: { returnUrl: state.url }});
+        return false;
         }
         return true;
     }

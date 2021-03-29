@@ -1,0 +1,42 @@
+<div class="page">
+    <div class="addMod">
+        <form [formGroup] = "addNewMod" (ngSubmit)='addMod()'>
+            <input type="text" [formControlName]="'modName'"class= "input">
+            <div class="btn">
+                <button type="submit" class="btn">
+                    Add New Admin
+                </button>
+             </div>
+        </form>
+    </div>
+    <div class="removeModerator">
+        <form [formGroup] = "removeMod" (ngSubmit)='removeModerator()'>
+            <input type="text" [formControlName]="'modName'"class= "input">
+            <div class="btn">
+                <button type="submit" class="btn">
+                    Remove site Admin
+                </button>
+             </div>
+        </form>
+    </div>
+    <div class="banUser">
+        <form [formGroup] = "banUser" (ngSubmit)='banUserbyName()'>
+            <input type="text" [formControlName]="'bannedName'"class= "input">
+            <div class="btn">
+                <button type="submit" class="btn">
+                    Ban User
+                </button>
+             </div>
+        </form>
+    </div>
+    <div class="unBan">
+        <form [formGroup] = "restoreUser" (ngSubmit)='restoreUserByName()'>
+            <input type="text" [formControlName]="'bannedName'"class= "input">
+            <div class="btn">
+                <button type="submit" class="btn">
+                    Restore User
+                </button>
+             </div>
+        </form>
+    </div>
+</div>

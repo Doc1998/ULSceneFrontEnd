@@ -21,11 +21,17 @@ export class ViewOtherProfileComponent implements OnInit {
   viewComments:boolean;
   joinDate: String;
   logos:number;
+  noPosts:boolean;
+  noComments:boolean;
   constructor(private postService: PostService,private activateRoute: ActivatedRoute,private commentService:CommentService,private router: Router,private toastr:ToastrService,private voteService:VoteService) {
     this.name = this.activateRoute.snapshot.params.user;
+    this.noComments = false;
+      this.noPosts = false;
     this.postService.getPostsByUser(this.name).subscribe(posts =>{
       this.posts = posts;
       this.viewPosts = true;
+    }, error => {
+      this.router.navigate(['home'])
     })
   
     this.voteService.getUsersLogos(this.name).subscribe(data =>{
@@ -42,13 +48,18 @@ export class ViewOtherProfileComponent implements OnInit {
     this.postService.getPostsByUser(this.name).subscribe(posts => {
       this.posts = posts;
       this.viewPosts = true;
+      if(posts.length < 1){
+        this.noPosts = true;
+      }
     })
   }
   showComments(){
     this.commentService.getCommentsByUser(this.name).subscribe(comments =>{
       this.comments = comments;
       this.viewPosts = false;
-      console.log('ok');
+      if(comments.length < 1){
+        this.noComments = true;
+      }
   })
 }
 }

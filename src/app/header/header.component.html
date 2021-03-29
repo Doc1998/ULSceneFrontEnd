@@ -1,6 +1,8 @@
 <div class="header">
     <div class="left">
-        <a routerLink="" routerLinkActive="active">ConnectUL</a>
+        <a routerLink="" routerLinkActive="active" *ngIf="!isLoggedIn">ConnectUL</a>
+        <a routerLink="home" routerLinkActive="active" *ngIf="isLoggedIn">ConnectUL</a>
+
     </div>
     <div class="right">
         <div *ngIf="isLoggedIn" class="options">
